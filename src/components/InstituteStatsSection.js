@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios'
 import { requestURL } from "./ReqUrl";
+import NewAdmissionAdminPopup from "./AdmissionAdmin/Institute/NewAdmissionAdmin"
 
 const InstituteStats = (props) => {
   const navigate = useNavigate();
@@ -56,7 +57,50 @@ const InstituteStats = (props) => {
             <p><span>Departments</span></p>
           </div> 
           }
+          {insData.status === 'Approved' ?
+
+          (insData.insAdmissionAdminStatus === "Not Alloted" ?
           <div
+            className={styles.insStatsText}
+            onClick={props.popup}
+          >
+            <p>
+              <span>
+              <img
+                src="/images/admission-icon.svg"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Admission"
+                alt="admission"
+              />
+              </span>
+            </p>
+            <p>
+              <span>Admission</span>
+            </p>
+          </div>
+          :
+          <div
+            className={styles.insStatsText}
+            onClick={() => navigate(`/ins-admission/${props.id}`)}
+          >
+            <p>
+              <span>
+              <img
+                src="/images/admission-icon.svg"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Admission"
+                alt="admission"
+              />
+              </span>
+            </p>
+            <p>
+              <span>Admission</span>
+            </p>
+          </div>
+          )
+        :<div
             className={styles.insStatsText}
             // onClick={() => navigate("/newadmission")}
           >
@@ -74,6 +118,7 @@ const InstituteStats = (props) => {
               <span>Admission</span>
             </p>
           </div>
+          }
         </div>
         <div className={styles.insStats}>
           {insData.status === 'Approved' ? 

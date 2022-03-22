@@ -16,6 +16,7 @@ const StaffSelectInstituteRole = (props) => {
   const [staffFinanceData, setStaffFinanceData] = useState([]);
   const [staffSportData, setStaffSportData] = useState([])
   const [staffSportClassData, setStaffSportClassData] = useState([])
+  const [staffAdmissionAdminData, setStaffAdmissionAdminData] = useState([]);
   const [staffDesignation, setStaffDesignation] = useState('')
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const StaffSelectInstituteRole = (props) => {
         const department = res.data.staff.staffDepartment;
         const classes = res.data.staff.staffClass;
         const subject = res.data.staff.staffSubject;
+        const admissionAdmin = res.data.staff.staffAdmissionAdmin;
         setStaffDesignation(res.data.staff)
         setStaffDepartmentData(department);
         setStaffClassData(classes);
@@ -32,6 +34,7 @@ const StaffSelectInstituteRole = (props) => {
         setStaffFinanceData(res.data.staff.financeDepartment)
         setStaffSportData(res.data.staff.sportDepartment)
         setStaffSportClassData(res.data.staff.staffSportClass)
+        setStaffAdmissionAdminData(admissionAdmin);
       })
       .catch((e) => {
         console.log("Something Went Wrong");
@@ -116,6 +119,13 @@ const StaffSelectInstituteRole = (props) => {
               className="text-center"
               value={`user/${props.id}/staff/${props.sid}/sport/profile/class/${st._id}`}
             >{`Sports and Arts Class Coach (Sport Department)`}</option>
+          ))}
+          {staffAdmissionAdminData &&
+            staffAdmissionAdminData.map((st) => (
+            <option
+              className="text-center"
+              value={`user/${props.id}/staff/${props.sid}/admission-admin/${st._id}`}
+            >{`Admission Admin Head`}</option>
           ))}
       </select>
     </>

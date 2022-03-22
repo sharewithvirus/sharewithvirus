@@ -8136,3 +8136,218 @@ i {
   margin: 0px 5px;
   font-size: larger;
 }
+
+/* ================================= For Admission Admin  =============================== */
+/* Addmission Admin CSS Start Here */
+.followdisplay{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c5cdd1;
+  padding-top: 7px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+.followdisplay img{
+  width: 50px;
+  height: 50px;  
+}
+.newAdmision{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.newAdmision1{
+  background-color: #c3ced3;
+}
+.admisionroundTable{
+  border: 1px solid rgb(187, 181, 181);
+  padding: 5px;
+  border-radius: 5px;
+}
+.admisionLastDate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.admisionLastDate input {
+  margin-top: -1rem;
+}
+.admisionprocess{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding: 1rem;
+}
+.admisionprocess ol {
+  text-align: left;
+}
+.admisionprocess ol li:nth-of-type(2n) {
+  background-color: rgb(194, 192, 189);
+}
+.admisionprocess ol li:nth-of-type(2n+1) {
+  background-color: #d8dddc;
+}
+.admisionroundTable div:nth-of-type(2n) {
+  background-color: rgb(194, 192, 189);
+}
+.admisionroundTable div:nth-of-type(2n+1) {
+  background-color: rgb(226, 222, 216);
+}
+.listhead{
+  background-color: rgb(151, 154, 155);
+}
+.newAdmision button {
+  height: fit-content;
+}
+.admisiondetails{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 78%;
+  margin-top: 3rem;
+}
+.customdiv{
+  margin-top: 1rem;
+  width: 50px;
+  height: 30px;
+  /* background-color: gray; */
+  border: 1px solid rgb(146, 143, 143);
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.customparent p{
+  margin-left: -10px;
+}
+.custdiv{
+  border: 1px solid rgb(194, 188, 188);
+  padding: 0.5rem;
+  border-radius: 6px;
+  background-color: rgb(178, 214, 224);
+}
+.custdiv2 {
+  width: 100%;
+  height: 70px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  
+}
+.custdiv2 img {
+  width: 50px;
+  height: 50px;
+}
+.customdiv2btn{
+  width: 245px;
+ 
+}
+.formtopinter{
+  flex-basis: 80%;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  outline: none;
+}
+
+.createplaylisttop1 i {
+  position: absolute;
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+
+.formtop {
+  display: flex;
+  gap: 1rem;
+}
+.formtop input {
+  border: 1px solid rgb(107, 175, 187);
+}
+.formtop1 {
+  width: 93%;
+  display: flex;
+  gap: 2rem;
+}
+.formtop1 .inputParent{
+  width: 32%;
+  border: 1px solid rgb(107, 175, 187);
+}
+
+.formtop1 div{
+  width: 32%;
+  border: 1px solid rgb(107, 175, 187);
+  padding-top: 0.5rem;
+  border-radius: 5px;
+
+}
+.formtext {
+  width: 93%;
+}
+.formtext textarea{
+  width: 100%;
+  border: 1px solid rgb(107, 175, 187);
+  padding: 1rem;
+  outline: none;
+  resize: none;
+  border-radius: 5px;
+}
+/* .inputParent input:p:nth-of-type(2n) {
+    border: 1px solid;
+} */
+.inputParent{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 8px;
+  
+}
+.inputChild{
+  border: 1px solid rgb(107, 175, 187);
+}
+.inputParent1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(107, 175, 187);
+  border-radius: 5px;
+}
+.inputParent1 input {
+  margin-right: 2rem;
+}
+.inputChild2{
+  position: absolute;
+  border: 1px solid rgb(107, 175, 187);
+}
+.inputLabel {
+  position: absolute;
+  /* left: 1rem; */
+}
+.inputParent2{
+  border: 1px solid rgb(107, 175, 187);
+  position: relative;
+  height: 50px;
+}
+.inputChild2:focus{
+  border: none;
+}
+
+/* Pop CSS for admission admin Popup */
+
+.roundPopUpContainer {
+  position: relative;
+  top: 35%;
+  left: 50%;
+  z-index: 110;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  min-height: fit-content;
+  padding: 30px;
+  border-radius: 10px;
+  width: 50%;
+}

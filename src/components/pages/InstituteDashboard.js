@@ -13,6 +13,7 @@ import axios from "axios";
 import { requestURL } from "../ReqUrl";
 import InstituteAnnouncementCard from "../InstituteAnnouncementCard";
 import moment from "moment";
+import NewAdmissionAdminPopup from "../AdmissionAdmin/Institute/NewAdmissionAdmin"
 
 const InstituteDashboard = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const InstituteDashboard = () => {
   const [insAnnData, setInsAnnData] = useState([]);
   const [showPost, setShowPost] = useState(true);
   const [first, setFirst] = useState(false)
+  const [showAdmissionAdminPopup, setShowAdmissionAdminPopup] = useState(false);
 
   useEffect(() => {
     if (showPost) {
@@ -36,6 +38,14 @@ const InstituteDashboard = () => {
     }
   }, [showPost]);
   // }, [inspost, insAnnData]);
+
+  const showAdmissionAdminPopupHandler = () => {
+    // setShowAdmissionAdminPopup(false);
+    setShowAdmissionAdminPopup((prv) => {
+        return !prv;
+      });
+  }
+
 
   const onShowPost = () => {
     setShowPost(true);
@@ -52,7 +62,7 @@ const InstituteDashboard = () => {
                 {insdata && <AboutSection insData={insdata} id={params.id} />}
                 {<InstituteSidebar id={params.id} />}
                 <div className={styles.rightCols}>
-                  <InstituteStatsSection id={params.id} />
+                  <InstituteStatsSection id={params.id} popup={showAdmissionAdminPopupHandler} />
                 </div>
               </div>
             </div>
@@ -105,6 +115,9 @@ const InstituteDashboard = () => {
                   />
                   Announcements / Notices
                 </p>
+              )}
+              {showAdmissionAdminPopup && (
+              <NewAdmissionAdminPopup popup={showAdmissionAdminPopupHandler} insData={insdata} />
               )}
               <InstituteAnnouncementCard id={params.id} />
             </div>

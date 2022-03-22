@@ -200,6 +200,13 @@ import LibraryWrapper from "./components/Library/Institute/LibraryWrapper";
 import StaffLibraryWrapper from "./components/Library/Staff/StaffLibraryWrapper";
 import UserLibraryWrapper from "./components/Library/User/UserLibraryWrapper";
 
+///////////FOR Admission Admin ////////////////
+
+import StaffAdmissionPanel from "./components/AdmissionAdmin/Staff/pages/StaffAdmissionPanel"
+import InsAdmissionPanel from "./components/AdmissionAdmin/Institute/pages/InsAdmissionPanel"
+import StudentNewApplication from "./components/AdmissionAdmin/Staff/pages/StudentNewApplication"
+import AppliedApplicationsStatus from "./components/AdmissionAdmin/User/pages/AppliedApplicationsStatus"
+
 
 // import Loggin from "./components/pages/Loggin";
 
@@ -1183,7 +1190,31 @@ function App(props) {
 
           {/* //////////////ENDING OF THE ECONTENT AND LIBRARY////////////// */}
 
+          {/* ==================THIS IS FOR THE Admission Admin ========================================== */}
 
+          <Route
+            path="/ins-admission/:id"
+            exact
+            element={<InsAdmissionPanel />} 
+          />
+          <Route
+            path="/user/:id/staff/:sid/admission-admin/:aid"
+            exact
+            element={<StaffAdmissionPanel />}
+          />
+
+          <Route
+            path="/user/:id/insjoinandapply/:iid/application-apply/:aid"
+            exact
+            element={<StudentNewApplication />}
+          />
+          <Route
+            path="/user/:id/application/apply"
+            exact
+            element={<AppliedApplicationsStatus />}
+          />
+
+        {/* //////////////ENDING OF Admission Admin ////////////// */}
         </Routes>
       </div>
     </Suspense>

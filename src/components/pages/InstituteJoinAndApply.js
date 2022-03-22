@@ -10,6 +10,7 @@ import SearchInstituteJoin from "./SearchInstituteJoin";
 import { requestURL } from "../ReqUrl";
 import NavbarTopUser from "../NavbarTopUser";
 import NavbarBottomUser from "../NavbarBottomUser";
+import moment from 'moment';
 
 const InstituteJoinAndApply = () => {
   const navigate = useNavigate();
@@ -26,6 +27,8 @@ const InstituteJoinAndApply = () => {
   const [searchUserList, setSearchUserList] = useState([]);
   const [closeHandler, setCloseHandler] = useState(false);
   const [first, setFirst] = useState(false);
+
+  const  [ applicationList, setApplicationList ] = useState([]);
 
   useEffect(() => {
     axios
@@ -46,6 +49,20 @@ const InstituteJoinAndApply = () => {
       });
   }, []);
   // }, [searchInsData]);
+
+  useEffect(() => {
+    axios
+      .get(`${requestURL}/admission-applications/details/${params.iid}`)
+      .then((res) => {
+        console.log(res.data.adAdminData.departmentApplications)
+        setApplicationList(res.data.adAdminData.departmentApplications);
+
+
+      })
+      .catch((e) => {
+        console.log("Something Went Wrong");
+      });
+    }, []);
 
   const joinCloseHandler = () => {
     setCloseHandler(false);
@@ -161,6 +178,50 @@ const InstituteJoinAndApply = () => {
                     </button>
                   </div>
                 </div>
+
+                <div className={` ${styles.outer2} ${styles.profileCreationPage}`}>
+                    <div className="d-flex justify-content-center">
+                      <div className={styles.newAdmision}>
+                        <h5>New Admissions:-</h5>
+                      </div>
+                    </div>
+                  {applicationList &&
+                    applicationList.map((ct) => (
+                      /* (ct.rounds).length -1,
+                      Date(),
+                      ct.rounds[(ct.rounds).length - 1 ].applicationLastDate < Date() */
+                      /* 
+                      ? (
+
+                  /*                      <div className="d-flex justify-content-center">
+                      <div className={`border border-dark ${styles.newAdmision} ${styles.newAdmision1} pt-3 px-3 rounded`}
+                        // onClick={() => navigate(`/user/${params.id}/insjoinandapply/${params.iid}/application-apply/${ct._id}`)}
+                      >
+                        <h5>{ct.applicationTitle}</h5>
+                        <h5> {ct.applicationForDepartment.dName}</h5>
+                        <h5>Application is Closed Now.</h5>
+                      </div>
+                    </div>
+                    /*
+                    )  : ( */
+                    <div className="d-flex justify-content-center">
+                      <div className={`border border-dark ${styles.newAdmision} ${styles.newAdmision1} pt-3 px-3 rounded`}
+                        onClick={() => navigate(`/user/${params.id}/insjoinandapply/${params.iid}/application-apply/${ct._id}`)}
+                      >
+                        <h6>{ct.applicationTitle}</h6>
+                        <h6> {ct.applicationForDepartment.dName}</h6>
+                        <h6>Available Seats: {ct.availableSeats}</h6>
+                        
+                      </div>
+                    </div>
+                   /*) */
+                    ))}
+
+                  </div>
+
+
+
+
                 {closeHandler && (
                   <SearchInstituteJoin joinCloseHandler={joinCloseHandler} />
                 )}

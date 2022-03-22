@@ -12,6 +12,7 @@ const InstituteRoleTab = (props) =>{
     const [staffDepartmentData, setStaffDepartmentData] = useState([])
     const [staffClassData, setStaffClassData] = useState([])
     const [staffSubjectData, setStaffSubjectData] = useState([])
+    const [staffAdmissionAdminData, setStaffAdmissionAdminData] = useState([])
 
     useEffect(() =>{
         axios.get(`${requestURL}/userdashboard/${props.uid ? props.uid : ''}`)
@@ -88,7 +89,7 @@ const InstituteRoleTab = (props) =>{
                           ))}
                         {userStudentData && userStudentData.map((st) =>(
                         st.studentStatus === 'Not Approved' ?
-                         <option value={st._id} disabled>{st.institute.insName} Student</option> 
+                          <option value={st._id} disabled>{st.institute.insName} Student</option>
                         :
                         st.studentStatus === 'Rejected' ? '' :
                           <option value={st._id}>{st.institute.insName} Student</option>

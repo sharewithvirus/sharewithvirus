@@ -27,6 +27,7 @@ const NavbarTopUser = (props) => {
   const [staffSubjectData, setStaffSubjectData] = useState([])
   const [classData, setClassData] = useState('')
   const [studentClassData, setStudentClassData] = useState([])
+  const [userAppAppliedData, setUserAppAppliedData] = useState([]);
 
   useEffect(() => {
     axios.get(`${requestURL}/insdashboard`).then((res) => {
@@ -45,6 +46,7 @@ const NavbarTopUser = (props) => {
         setStaffClassData(res.data.user.staff[0] ? res.data.user.staff[0].staffClass : '')
         setStaffSubjectData(res.data.user.staff[0] ? res.data.user.staff[0].staffSubject : '')
         setStudentClassData(res.data.user.student ? res.data.user.student[0] : '')
+        setUserAppAppliedData(res.data.user.appliedForApplication)
       });
 
   }, []);
@@ -153,17 +155,17 @@ const NavbarTopUser = (props) => {
           : staffSubjectData.length >=1 && staffDepartmentData.length >=1 ? 
             <li className="mx-lg-5 mx-md-3 mx-sm-2" onClick={() => navigate(`/user/${props.uid}/staff/${userStaffMemberData[0]._id}/department/${userStaffMemberData[0].staffSubject[0]._id}`)}>
               <img src="/images/member-icon.svg" alt="finance" className={style.svgIcon} data-toggle="tooltip"
-               data-placement="bottom" title="Members"/>
+                data-placement="bottom" title="Members"/>
             </li>
           : !(staffDepartmentData.length >=1 && staffClassData.length >=1 && staffSubjectData.length >=1) ? 
           <li className="mx-lg-5 mx-md-3 mx-sm-2" onClick={() => navigate(`/user/${props.uid}/staff/profile/${userStaffMemberData[0]._id}`)}>
               <img src="/images/member-icon.svg" alt="finance" className={style.svgIcon} data-toggle="tooltip"
                 data-placement="bottom" title="Members"/>
             </li>
-             : ''
-             :
-             userStudentData.length >=1 ? 
-               studentClassData.studentClass && studentClassData.studentClass.ApproveStudent && studentClassData.studentClass.ApproveStudent.some((et) => et._id === `${userStudentData[0]._id}`) ?
+            : ''
+            :
+            userStudentData.length >=1 ? 
+              studentClassData.studentClass && studentClassData.studentClass.ApproveStudent && studentClassData.studentClass.ApproveStudent.some((et) => et._id === `${userStudentData[0]._id}`) ?
             <li className="mx-lg-5 mx-md-3 mx-sm-2" onClick={() => navigate(`/user/${props.uid}/studentdetail/${userStudentData[0]._id}`)}
             > 
               <img src="/images/member-icon.svg" alt="finance" className={style.svgIcon} data-toggle="tooltip"
@@ -181,7 +183,27 @@ const NavbarTopUser = (props) => {
               <img src="/images/member-icon.svg" alt="finance" className={style.svgIcon} data-toggle="tooltip"
                 data-placement="bottom" title="Members"/>
             </li>
-            : !(userStaffMemberData.length >=1 && userStudentData.length >=1) ? '' 
+            : userAppAppliedData.length >= 1 ? 
+            <li
+              className="mx-lg-5 mx-md-3 mx-sm-2"
+              onClick={() =>
+                navigate(
+                  `/user/${props.uid}/application/apply/`
+                )
+              }
+            >
+              <img
+                src="/images/member-icon.svg"
+                alt="finance"
+                className={style.svgIcon}
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Members"
+              />
+            </li>
+            :!
+              userStaffMemberData.length >= 1 && userStudentData.length >= 1 && userAppAppliedData.length >= 1 ? ""
+
             : <li className="mx-lg-5 mx-md-3 mx-sm-2" 
             // onClick={() => navigate(`/user/${props.uid}/staffmember`)}
             >
