@@ -1,0 +1,235 @@
+/* -----------------Scroll--------------------------------------- */
+
+.scrollContainer {
+  width: 100%;
+  background-color: rgb(240, 248, 248);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollInner {
+  width: 100%;
+  /* height: 90%; */
+  /* background-color: rgb(224, 240, 240);
+   */
+
+  background-color: #f7f3f3;
+}
+.scrollInner select {
+  display: flex;
+}
+
+.scrollfirst {
+  width: 100%;
+  height: 50px;
+  /* background-color: rgb(133, 133, 238);
+   */
+  background-color: #f7f3f3;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 2rem 0 2rem;
+  cursor: pointer;
+}
+.scrollContent {
+  width: 100%;
+  margin-top: 3px;
+  height: 180px;
+  padding: 5px;
+}
+.contentlist {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  overflow-x: scroll;
+}
+
+.eachContent {
+  min-height: 90%;
+  min-width: 150px;
+  background-color: rgb(205, 205, 214);
+  border-radius: 5px;
+}
+
+.scrollfirst {
+  width: 100%;
+  height: 50px;
+  /* background-color: rgb(133, 133, 238);
+   */
+
+  background-color: #f7f3f3;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 2rem 0 2rem;
+  cursor: pointer;
+}
+.scrollContent {
+  width: 100%;
+  margin-top: 3px;
+  height: 180px;
+  padding: 5px;
+}
+
+.contentlist {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  overflow-x: scroll;
+}
+.eachContent {
+  min-height: 90%;
+  min-width: 150px;
+  background-color: rgb(205, 205, 214);
+  border-radius: 5px;
+}
+
+.eresourceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  /* background-color: rgb(221, 226, 240); */
+  background-color: #f7f3f3;
+  overflow-x: scroll;
+}
+
+.eresource {
+  width: 100%;
+
+  display: flex;
+  padding: 3px;
+  gap: 1rem;
+}
+
+.rplaylist {
+  min-width: 170px;
+  max-width: 300px;
+  height: 180px;
+  background-color: rgb(224, 240, 240);
+  border-radius: 3px;
+}
+.rplaylist img {
+  width: 100%;
+  height: 75%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.rplaylistfooter {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(40, 49, 63);
+  color: white;
+  padding-top: 5px;
+}
+.rplaylistfooter h4 {
+  font-size: 13px;
+}
+.rplaylistfooter h6 {
+  font-size: 11px;
+}
+
+.randomVideo {
+  width: 100%;
+
+  overflow-y: scroll;
+  height: 300px;
+}
+.randomVideoInner {
+  gap: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  min-height: 350px;
+}
+.randomVideoCard {
+  min-width: 270px;
+  height: 180px;
+  background-color: rgb(194, 196, 197);
+}
+.randomheader {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ricon {
+  width: 50px;
+  height: 50px;
+}
+.randomfooter {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px 0 5px;
+  background-color: rgb(157, 163, 201);
+}
+.rdate {
+  margin-top: -1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .loginscreen {
+    display: block;
+    position: relative;
+  }
+  .signupInner {
+    width: 40%;
+    margin-bottom: 20px;
+    height: fit-content;
+    padding: 5px 1px 5px 1px;
+    color: rgb(6, 32, 41);
+  }
+  .flexfirst {
+    display: none;
+  }
+  .flexsecond {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .loginFormParent {
+    background-color: deepskyblue;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 50% 50% 0 0;
+  }
+
+  .loginForm {
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+
+    margin: 0;
+  }
+  .loginContainer {
+    width: 100vw;
+    margin: 0;
+  }
+  .headerSection {
+    margin-left: -2rem;
+  }
+  .signup {
+    margin-top: 5rem;
+  }
+
+  .rightLinks a {
+    color: rgb(8, 136, 179);
+  }
+  .loginInner h4 {
+    color: rgb(220, 226, 228);
+  }
+}

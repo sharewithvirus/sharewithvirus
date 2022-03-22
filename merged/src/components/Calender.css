@@ -1,0 +1,120 @@
+:root {
+  --main-bg: rgb (40, 40, 59);
+  --calendar-border: rgb (220, 220, 255);
+  --calendar-bg: #fff;
+  --calendar-standout: rgb (40, 40, 59);
+  --calendar-color: #444;
+  --calendar-fade-color: #c0c0c0;
+  --body-color: #444;
+}
+
+#calender {
+  font-size: 100%;
+  line-height: 1.6;
+  font-family: "Roboto Condensed", sans-serif;
+  background: --main-bg;
+  background-image: linear-gradient(--main-bg 0%, darken(--main-bg, 12%) 100%);
+  color: --body-color;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+#calender .group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#calender img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: baseline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.calendar-wrapper {
+  width: 75%;
+  margin: 3em auto;
+  padding: 2em;
+  border: 1px solid var(--calendar-border);
+  border-radius: 5px;
+  background: var(--calendar-bg);
+}
+@media only screen and (max-width: 578px) {
+  .calendar-wrapper {
+    width: 100%;
+  }
+}
+#calender table {
+  clear: both;
+  width: 100%;
+  border: 1px solid var(--calendar-border);
+  border-radius: 3px;
+  border-collapse: collapse;
+  color: var(--calendar-color);
+}
+#calender td {
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  border-right: 1px solid var(--calendar-border);
+  border-top: 1px solid var(--calendar-border);
+  width: 100% / 7;
+}
+#calender td.not-current {
+  color: var(--calendar-fade-color);
+}
+
+#calender td.today {
+  font-weight: 700;
+  color: var(--calendar-standout);
+  font-size: 1.6rem;
+}
+#calender thead td {
+  border: none;
+  color: var(--calendar-standout);
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+#calender #btnPrev {
+  float: left;
+  margin-bottom: 20px;
+}
+#calender #btnPrev:before {
+  content: "\f104";
+  font-family: FontAwesome;
+  padding-right: 4px;
+}
+#calender #btnNext {
+  float: right;
+  margin-bottom: 20px;
+}
+#calender #btnNext:after {
+  content: "\f105";
+  font-family: FontAwesome;
+  padding-left: 4px;
+}
+#calender #btnPrev,
+#calender #btnNext {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: --calendar-fade-color;
+  cursor: pointer;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+#calender #btnPrev:hover,
+#calender #btnNext:hover {
+  color: var(--calendar-standout);
+  font-weight: bold;
+}

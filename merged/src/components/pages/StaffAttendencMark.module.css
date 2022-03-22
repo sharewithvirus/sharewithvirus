@@ -1,0 +1,138 @@
+.attendenceContainer {
+    border: 1px solid;
+    padding: 1rem;
+    background-color: rgb(237, 243, 243);
+    width: 95%;
+  }
+  .activeRow {
+    font-weight: bold;
+    color: #072227;
+    line-height: 50px;
+  }
+  .present,
+  .absent {
+    font-size: 1.1rem !important;
+  }
+  .present:hover {
+    color: green !important;
+  }
+  .absent:hover {
+    color: red !important;
+  }
+  .rowHight {
+    line-height: 50px;
+    background-color: #fff;
+  }
+  @media screen and (max-width: 460px) {
+    .attendenceinput {
+      display: block;
+    }
+    .flexitemlabel {
+      margin-left: 0;
+    }
+    .attendenceContainer {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .attendenceinput {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem;
+    background-color: #072227;
+    padding: 1rem;
+    border-radius: 5px;
+    justify-content: space-between !important;
+  }
+  @media screen and (max-width: 640px) {
+    .attendenceinput {
+      margin: 10px;
+    }
+  }
+  .flexitem {
+    display: flex;
+    gap: 1rem;
+    /* flex-grow: 1; */
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: 730px) {
+    /* .flexitem {
+      display: block;
+    } */
+    .flexitemlabel {
+      margin-left: 9px;
+    }
+    .flexitemselect {
+      margin-top: 12px;
+    }
+  }
+  @media screen and (max-width: 460px) {
+    .attendenceinput {
+      display: block;
+    }
+    .flexitemlabel {
+      margin-left: 0;
+    }
+    .attendenceContainer {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .attendenceTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 90%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 0.15);
+  }
+  @media screen and (max-width: 460px) {
+    .paginationBttns a {
+      margin: 0.1rem;
+    }
+    .attendenceTable th,
+    .attendenceTable td {
+      padding: 5px 5px;
+    }
+    @media screen and (max-width: 360px) {
+      .attendenceTable th,
+      .attendenceTable td {
+        padding: 2px 2px;
+      }
+    }
+    .attendenceTable {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      min-width: 90%;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0, 0.15);
+    }
+    .attendenceTable thead tr {
+      background-color: #072227;
+      color: white;
+      font-weight: bold;
+    }
+    .attendenceTable th,
+    .attendenceTable td {
+      padding: 12px 15px;
+    }
+  
+    .attendenceTable tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    .activeRow {
+      font-weight: bold;
+      color: #072227;
+    }
+    .attendenceTable tbody tr:nth-of-type(even) {
+      background-color: #d3dedc;
+    }
+    .attendenceTable tbody tr:last-of-type {
+      border-bottom: 1px solid #1d363a;
+    }
+  }

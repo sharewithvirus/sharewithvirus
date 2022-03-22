@@ -1,0 +1,30 @@
+.qviple__conversation {
+  display: flex;
+  /* padding: 20px; */
+  margin-top: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid lightgray;
+}
+
+.qviple__conversation:hover {
+  background-color: #afafaf;
+}
+
+.qviple__conversationInfo > h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.qviple__conversationTime {
+  margin-left: 171px;
+  color: black;
+}
+
+.qviple__conversationText {
+  text-align: justify;
+  font-size: 14px;
+}
+
+.qviple__conversationInfo {
+  margin-left: 13px;
+}

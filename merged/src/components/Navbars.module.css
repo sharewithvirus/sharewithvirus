@@ -1,0 +1,83 @@
+.mainnavs {
+  background: #19252e;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 1);
+  padding-top: 8px;
+}
+
+.mainnavs ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.mainnavs ul li:nth-of-type(1) {
+  font-size: 19px;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+}
+
+.mainnavs input {
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  background-color: rgb(3, 67, 78);
+  color: white;
+}
+
+.mainnavs ul li i {
+  margin-top: 5px;
+  font-size: 21px;
+  color: rgb(255, 255, 255);
+}
+
+.mainnavs ul li p {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+/* .mainnavs ul li:hover {
+    color: rgb(0, 255, 221);
+  }
+  
+  .mainnavs ul li i:hover {
+    color: rgb(0, 255, 221);
+  } */
+
+.mainnavs input::placeholder {
+  letter-spacing: 0.8px;
+  color: white;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 25px;
+  left: 17.5em;
+}
+
+.userimg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.userprofile {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: capitalize;
+  letter-spacing: 0.7px;
+  margin-top: 15px;
+  margin-left: 5px;
+}

@@ -1,0 +1,40 @@
+module.exports.stateData = [
+    { state : 'Andhra Pradesh' },
+    { state : 'Arunachal Pradesh' },
+    { state : 'Assam' },
+    { state : 'Bihar' },
+    { state : 'Chandigarh' },
+    { state : 'Chhattisgarh' },
+    { state : 'Delhi' },
+    { state : 'Goa' },
+    { state : 'Gujarat' },
+    { state : 'Haryana' },
+    { state : 'Himanchal Pradesh' },
+    { state : 'Jammu and Kashmir' },
+    { state : 'Jharkhand' },
+    { state : 'Karnataka' },
+    { state : 'Kerela' },
+    { state : 'Madhya Pradesh' },
+    { state : 'Maharashtra' },
+    { state : 'Manipur' },
+    { state : 'Meghalaya' },
+    { state : 'Mizoram' },
+    { state : 'Nagaland' },
+    { state : 'Odisha' },
+    { state : 'Punjab' },
+    { state : 'Rajasthan' },
+    { state : 'Sikkim' },
+    { state : 'Tamil Nadu' },
+    { state : 'Telangana' },
+    { state : 'Tripura' },
+    { state : 'Uttar Pradesh' },
+    { state : 'Uttrakhand' },
+    { state : 'West Bengal' },
+]
+
+module.exports.modeData = [
+    { mode: 'Online' },
+    { mode: 'Offline' },
+    { mode: 'Both' }
+]
+
